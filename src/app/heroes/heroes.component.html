@@ -1,0 +1,31 @@
+<!-- <h2>{{hero}}</h2>
+<h2>{{hero.name}}</h2>
+
+<h2>{{hero.name | uppercase}} Details</h2>
+<div><span>id: </span>{{hero.id}}</div>
+ <div>
+    <label for="name">Hero name</label>
+    <input placeholder="name" id="name" [(ngModel)]="hero.name">
+    <!-- <input id="name" [(ngModel)]="hero.name" placeholder="name"> -->
+<!--</div> 
+ -->
+
+ <!-- [class.selected]="hero === selectHero"   this will bind the data  -->
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes" [class.selected]="hero === selectHero" (click)="onSelect(hero)">
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul>
+
+<!-- <div  *ngIf="selectHero">
+    <h2>{{selectHero.name | uppercase}} Details</h2>
+<div>
+    <span>id: </span>{{selectHero.id}}
+</div>
+<div>
+  <label for="hero-name">Hero name: </label>
+  <input id="hero-name" [(ngModel)]="selectHero.name" placeholder="name">
+</div>
+</div> -->
+<app-hero-detail [hero]="selectHero"></app-hero-detail>
